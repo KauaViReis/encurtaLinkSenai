@@ -1007,7 +1007,6 @@ export default function Dashboard() {
           isOpen={isQRCodeModalOpen}
           onClose={() => setIsQRCodeModalOpen(false)}
           shortCode={selectedQRCodeLink.shortCode}
-          url={selectedQRCodeLink.url}
         />
       )}
     </div>
