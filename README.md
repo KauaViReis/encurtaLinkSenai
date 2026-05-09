@@ -1,45 +1,55 @@
-# Encurtador de Links SENAI
+# 🚀 SenaiLinks - Premium URL Shortener
 
-Aplicação completa de encurtador de links utilizando React, Vite, Tailwind CSS v4, e Firebase (Auth e Firestore). O sistema apresenta um design moderno estilo Glassmorphism, temas claro/escuro nativos do Tailwind, e roteamento para redirecionamento.
+<div align="center">
+  <img src="https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react" />
+  <img src="https://img.shields.io/badge/Firebase-12-orange?style=for-the-badge&logo=firebase" />
+  <img src="https://img.shields.io/badge/Tailwind-4-38B2AC?style=for-the-badge&logo=tailwind-css" />
+  <img src="https://img.shields.io/badge/Framer_Motion-611FEE?style=for-the-badge&logo=framer" />
+</div>
 
-## 🚀 Como Rodar o Projeto
+---
 
-1. **Instale as dependências:**
-   ```bash
-   npm install
-   ```
+## ✨ Sobre o Projeto
+O **SenaiLinks** não é apenas um encurtador de URLs comum. É uma plataforma de gestão de links com estética **Premium Liquid Glass**, focada em performance, segurança e experiência do usuário. 
 
-2. **Configuração do Firebase:**
-   Renomeie o arquivo `.env.example` para `.env.local` e certifique-se de que as chaves da API do Firebase geradas anteriormente estão corretas. (Um arquivo `.env.local` já foi gerado e pré-preenchido para você).
+Desenvolvido para profissionais que precisam de links curtos, elegantes e com analytics detalhado.
 
-3. **Inicie o servidor de desenvolvimento:**
-   ```bash
-   npm run dev
-   ```
+## 🌟 Funcionalidades de Elite
+- 🔗 **Slugs Customizados:** Escolha exatamente como seu link deve ser (ex: `senai.link/projeto-x`).
+- 🔳 **QR Code Engine:** Gere QR Codes estilizados com temas exclusivos para cada link.
+- 🛡️ **Proteção por Senha:** Garanta que apenas quem tem a senha acesse o destino final.
+- ⏳ **Links com Expiração:** Defina uma data de validade para seus links.
+- 👤 **Página de Bio Pública:** Uma vitrine elegante para todos os seus links importantes.
+- 📊 **Analytics em Tempo Real:** Acompanhe cliques, dispositivos e origens de tráfego.
 
-## 🔒 Regras de Segurança do Firestore
+## 🛠️ Stack Tecnológica
+- **Frontend:** React 19 + Vite + TypeScript
+- **Estilização:** Tailwind CSS + Framer Motion (Animações High-End)
+- **Backend/DB:** Firebase Firestore & Authentication
+- **Ícones:** Lucide React
+- **Notificações:** Sonner
 
-Para que o redirecionamento e as listagens funcionem corretamente de forma segura, acesse o Console do Firebase -> Firestore Database -> Rules e cole as regras contidas no arquivo `firestore.rules`:
+## 🚀 Como Rodar
+1.  **Clone o repositório:**
+    ```bash
+    git clone https://github.com/KauaViReis/encurtaLinkSenai.git
+    ```
+2.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
+3.  **Configure o Firebase:**
+    Crie um arquivo `.env` baseado no seu projeto Firebase e adicione as chaves necessárias.
+4.  **Inicie o desenvolvimento:**
+    ```bash
+    npm run dev
+    ```
 
-```javascript
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /links/{linkId} {
-      allow read: if true; 
-      allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
-      allow update: if true; 
-      allow delete: if request.auth != null && resource.data.userId == request.auth.uid;
-    }
-  }
-}
-```
+## 📸 Screenshots
+*Em breve: Adicione aqui as imagens geradas pelo projeto.*
 
-## 🛠️ Tecnologias Utilizadas
-- React 18
-- Vite
-- Tailwind CSS v4
-- Firebase (Authentication, Firestore)
-- React Router DOM
-- i18next (Internacionalização PT, EN, ES)
-- Lucide React (Ícones)
+---
+
+<div align="center">
+  <p>Desenvolvido com ❤️ para a Aula de Desenvolvimento Web - SENAI</p>
+</div>
