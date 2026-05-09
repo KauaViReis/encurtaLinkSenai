@@ -1,0 +1,37 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /links/{linkId} {
+      // Leitura pública para permitir o redirecionamento
+      allow read: if true; 
+      
+      // Criação apenas para usuários autenticados (dono do link)
+      allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      
+      // Permitir atualização (incremento de cliques no redirecionamento)
+      // Em um cenário real, restringiríamos para permitir apenas o campo 'clicks' para usuários não-donos
+      allow update: if true; 
+      
+      // Excluir apenas se o usuário for o dono do link
+      allow delete: if request.auth != null && resource.data.userId == request.auth.uid;
+
+      // Subcoleção de Analytics
+      match /analytics/{analyticsId} {
+        // Visitantes (não autenticados) podem criar registros de analytics ao acessar o link
+        allow create: if true;
+        
+        // Apenas o dono do link (pai) pode ler os dados de analytics para o dashboard
+        allow read: if request.auth != null && get(/databases/$(database)/documents/links/$(linkId)).data.userId == request.auth.uid;
+      }
+    }
+
+    // Coleção de Usuários (Perfis Públicos)
+    match /users/{userId} {
+      // Qualquer um pode ler um perfil público
+      allow read: if true;
+      
+      // Apenas o próprio usuário pode criar ou editar seu perfil
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}

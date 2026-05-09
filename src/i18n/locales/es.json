@@ -1,0 +1,25 @@
+{
+  "login": {
+    "title": "Accede a tu cuenta",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "submit": "Entrar",
+    "google": "Entrar con Google",
+    "error": "Error al iniciar sesión. Comprueba tus credenciales.",
+    "register": "¿No tienes cuenta? Regístrate"
+  },
+  "dashboard": {
+    "title": "¡Acortador Senai!",
+    "logout": "Salir",
+    "shorten_btn": "Acortar",
+    "placeholder": "Pega tu URL larga aquí...",
+    "my_links": "Mis enlaces",
+    "original": "URL Original",
+    "shortened": "Enlace corto",
+    "clicks": "Clics",
+    "created": "Creado en",
+    "copy": "Copiar",
+    "delete": "Eliminar",
+    "copied": "¡Copiado!"
+  }
+}

@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-glass-light: rgba(255, 255, 255, 0.05);
+  --color-glass-dark: rgba(2, 6, 23, 0.4);
+  --color-glass-border-light: rgba(255, 255, 255, 0.1);
+  --color-glass-border-dark: rgba(255, 255, 255, 0.05);
+  
+  --color-neon-purple: #8B5CF6;
+  --color-neon-blue: #3B82F6;
+  --color-neon-indigo: #6366F1;
+  --color-neon-violet: #7C3AED;
+}
+
+@layer base {
+  :root {
+    --background: #f8fafc;
+    --foreground: #0f172a;
+    --card: rgba(255, 255, 255, 0.7);
+    --card-foreground: #0f172a;
+    --border: rgba(0, 0, 0, 0.1);
+  }
+
+  .dark {
+    /* Fundo muito escuro conforme solicitado (#0F172A, #111827, #020617) */
+    --background: #020617;
+    --foreground: #ffffff;
+    --card: rgba(15, 23, 42, 0.4);
+    --card-foreground: #f8fafc;
+    --border: rgba(255, 255, 255, 0.05);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Fundo global escuro/claro base, gradients e glows virão via classes absolutas */
+  }
+
+  /* Reset global scrollbar style for premium feel */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(128, 128, 128, 0.3);
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(128, 128, 128, 0.5);
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background-color: var(--card);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  }
+  
+  .glass-panel-heavy {
+    background-color: rgba(2, 6, 23, 0.6);
+    backdrop-filter: blur(40px) saturate(150%);
+    -webkit-backdrop-filter: blur(40px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 24px 64px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+  }
+}

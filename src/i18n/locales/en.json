@@ -1,0 +1,25 @@
+{
+  "login": {
+    "title": "Access your account",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Sign in",
+    "google": "Sign in with Google",
+    "error": "Failed to log in. Check your credentials.",
+    "register": "Don't have an account? Sign up"
+  },
+  "dashboard": {
+    "title": "Senai Link Shortener!",
+    "logout": "Logout",
+    "shorten_btn": "Shorten",
+    "placeholder": "Paste your long URL here...",
+    "my_links": "My Links",
+    "original": "Original URL",
+    "shortened": "Short Link",
+    "clicks": "Clicks",
+    "created": "Created at",
+    "copy": "Copy",
+    "delete": "Delete",
+    "copied": "Copied!"
+  }
+}

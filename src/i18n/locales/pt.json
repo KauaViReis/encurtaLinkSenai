@@ -1,0 +1,25 @@
+{
+  "login": {
+    "title": "Acesse sua conta",
+    "email": "E-mail",
+    "password": "Senha",
+    "submit": "Entrar",
+    "google": "Entrar com Google",
+    "error": "Erro ao fazer login. Verifique suas credenciais.",
+    "register": "Não tem uma conta? Cadastre-se"
+  },
+  "dashboard": {
+    "title": "Encurta Link Senai!",
+    "logout": "Sair",
+    "shorten_btn": "Encurtar",
+    "placeholder": "Cole sua URL longa aqui...",
+    "my_links": "Meus Links",
+    "original": "URL Original",
+    "shortened": "Link Curto",
+    "clicks": "Cliques",
+    "created": "Criado em",
+    "copy": "Copiar",
+    "delete": "Excluir",
+    "copied": "Copiado!"
+  }
+}
