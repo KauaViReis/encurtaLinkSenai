@@ -4,19 +4,17 @@ import { Modal } from './Modal';
 import { GlowButton } from './GlowButton';
 import { Download, Copy, Share2, Palette, Check } from 'lucide-react';
 import { toast } from 'sonner';
-import { motion } from 'framer-motion';
 
 interface QRCodeModalProps {
   isOpen: boolean;
   onClose: () => void;
   shortCode: string;
-  url: string;
 }
 
-export function QRCodeModal({ isOpen, onClose, shortCode, url }: QRCodeModalProps) {
+export function QRCodeModal({ isOpen, onClose, shortCode }: QRCodeModalProps) {
   const canvasRef = useRef<HTMLDivElement>(null);
   const [fgColor, setFgColor] = useState('#a855f7'); // Roxo padrão
-  const [bgColor, setBgColor] = useState('#ffffff');
+  const [bgColor] = useState('#ffffff');
   const fullUrl = `${window.location.origin}/r/${shortCode}`;
 
   const downloadQRCode = () => {

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { db } from '../services/firebase';
 import { collection, query, where, getDocs, updateDoc, increment, doc, addDoc, serverTimestamp } from 'firebase/firestore';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, Lock, ArrowRight, Clock, AlertTriangle, Link as LinkIcon, Loader2, Sparkles } from 'lucide-react';
+import { Shield, Lock, ArrowRight, Clock, AlertTriangle, Loader2, Sparkles } from 'lucide-react';
 import { PremiumCard } from '../components/ui/PremiumCard';
 import { GlowButton } from '../components/ui/GlowButton';
 import { toast } from 'sonner';
